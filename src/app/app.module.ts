@@ -16,7 +16,7 @@ import { RoutesModule } from './routes/routes.module';
     AppRoutingModule,
     RouterModule,
     LayoutModule,
-    RoutesModule
+    RoutesModule, 
   ],
  
   providers: [],
