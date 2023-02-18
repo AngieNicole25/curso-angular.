@@ -14,12 +14,12 @@ import { IngresarComponent } from './ingresar/ingresar.component';
     HomeComponent,
     MoviesComponent,
     SeriesComponent,
-    IngresarComponent
+    IngresarComponent,
   ],
   imports: [
     CommonModule, 
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     HomeComponent,
