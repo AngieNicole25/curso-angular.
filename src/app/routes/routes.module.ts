@@ -4,13 +4,17 @@ import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { SeriesComponent } from './series/series.component';
+import { IngresarComponent } from './ingresar/ingresar.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    MoviesComponent
+    MoviesComponent,
+    SeriesComponent,
+    IngresarComponent
   ],
   imports: [
     CommonModule, 
@@ -19,7 +23,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     HomeComponent,
-    MoviesComponent
+    MoviesComponent,
+    SeriesComponent,
+    IngresarComponent,
   ],
 })
 export class RoutesModule { }

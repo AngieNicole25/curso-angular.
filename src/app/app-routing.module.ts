@@ -1,16 +1,26 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './routes/home/home.component';
+import { IngresarComponent } from './routes/ingresar/ingresar.component';
 import { MoviesComponent } from './routes/movies/movies.component';
+import { SeriesComponent } from './routes/series/series.component';
 
 const routes: Routes = [
   {
     path: 'home', 
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'movies',
-    component: MoviesComponent
+    component: MoviesComponent,
+  },
+  {
+    path: 'series',
+    component: SeriesComponent
+  },
+  {
+    path: 'ingresar',
+    component: IngresarComponent
   },
   {
     path: '',
