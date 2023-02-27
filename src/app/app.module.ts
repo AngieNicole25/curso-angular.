@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { RoutesModule } from './routes/routes.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { RoutesModule } from './routes/routes.module';
     AppRoutingModule,
     RouterModule,
     LayoutModule,
-    RoutesModule, 
+    RoutesModule,
+    BrowserAnimationsModule,
+    TypeaheadModule.forRoot(), 
   ],
  
   providers: [],

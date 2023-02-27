@@ -6,6 +6,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { SeriesComponent } from './series/series.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -14,12 +16,13 @@ import { IngresarComponent } from './ingresar/ingresar.component';
     HomeComponent,
     MoviesComponent,
     SeriesComponent,
-    IngresarComponent
+    IngresarComponent,
   ],
   imports: [
     CommonModule, 
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
   ],
   exports: [
     HomeComponent,
