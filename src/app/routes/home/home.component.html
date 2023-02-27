@@ -1,12 +1,31 @@
 <!-- HOME -->
 <section class="containerl">
-    <h1 class="title">PelisUp!</h1>
-    <p>Plataforma para ver películas y series <img class="emiji" src="/assets/imagenes/superestrella.png" width="20rem" alt=""></p>
-    <input class="search" name="search" placeholder="Buscar Peliculas y Series" type="search" />
-    <div class="btn-group me-2" role="group" aria-label="Second group">
-      <button type="button" class="btn btn-secondary">Todos</button>
-      <button type="button" class="btn btn-secondary">Películas</button>
-      <button type="button" class="btn btn-secondary">Series</button>
+  <h1 class="title">PelisUp!</h1>
+  <p class="body-regular description">Plataforma para ver películas y series <img class="emiji" src="/assets/imagenes/superestrella.png" width="20rem" alt=""></p>
+  <input class="search" name="search" type="search"  placeholder="🔍Buscar Peliculas y Series" [(ngModel)]= "paraBuscar" (ngModelChange)="buscar(paraBuscar)"/>
+
+  <div class="btn-group me-2" role="group" aria-label="Second group">
+    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Todos')"
+      [ngClass]="selected == 'Todos' ? 'button-Selected' : 'button-NoSelected'">Todos</button>
+    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Peliculas')"
+      [ngClass]="selected == 'Peliculas' ? 'button-Selected' : 'button-NoSelected'">Películas</button>
+    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Series')"
+      [ngClass]="selected == 'Series' ? 'button-Selected' : 'button-NoSelected'">Series</button>
+  </div>
+</section>
+
+<div class="d-flex justify-content-center aling-items-start flex-wrap">
+  <div class="row row-cols-1 row-cols-md-4 g-4 ">
+    <div class="col-md-3" *ngFor="let movie of movies_series">
+      <div class="card" *ngIf="selected == movie.category || selected == 'Todos' ">
+        <div class="qualification">
+          <i class="far fa-star mr-1">
+            <img class="Estar" src="/assets/imagenes/estrella.png" alt="">6.8</i>
+        </div>
+        <img src={{movie.image}} />
+        <div class="contenido">
+          <h5>{{movie.name}}</h5>
+        </div>
+
+      </div>
     </div>
-   </section>
-<app-card></app-card>
