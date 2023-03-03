@@ -79,6 +79,8 @@ movies_series : MovieSeries [] =[
 
 ]
 
+auxiliarMovies_series: MovieSeries [] =this.movies_series
+
   selected: string = 'Todos';
 
   paraBuscar: string = ''; 
@@ -92,5 +94,13 @@ movies_series : MovieSeries [] =[
 
   buscar(value: string) {
     console.log(value);
-  } 
+    this.auxiliarMovies_series = []
+   for(let movie of this.movies_series){
+    if(movie.name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+      this.auxiliarMovies_series.push(movie)
+    }
+   }
+    console.log (this.auxiliarMovies_series)
+  }
+ 
 }
