@@ -1,31 +1,48 @@
 <!-- HOME -->
 <section class="containerl">
   <h1 class="title">PelisUp!</h1>
-  <p class="body-regular description">Plataforma para ver películas y series <img class="emiji" src="/assets/imagenes/superestrella.png" width="20rem" alt=""></p>
-  <input class="search" name="search" type="search"  placeholder="🔍Buscar Peliculas y Series" [(ngModel)]= "paraBuscar" (ngModelChange)="buscar(paraBuscar)"/>
+  <p class="body-regular description">
+    Plataforma para ver películas y series
+    <img class="emiji" src="/assets/imagenes/superestrella.png" width="20rem" alt="" />
+  </p>
+  <input class="search" name="search" type="search" placeholder="🔍Buscar Peliculas y Series" [(ngModel)]="paraBuscar"
+    (ngModelChange)="buscar(paraBuscar)" />
 
   <div class="btn-group me-2" role="group" aria-label="Second group">
     <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Todos')"
-      [ngClass]="selected == 'Todos' ? 'button-Selected' : 'button-NoSelected'">Todos</button>
-    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Peliculas')"
-      [ngClass]="selected == 'Peliculas' ? 'button-Selected' : 'button-NoSelected'">Películas</button>
-    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('Series')"
-      [ngClass]="selected == 'Series' ? 'button-Selected' : 'button-NoSelected'">Series</button>
+      [ngClass]="selected == 'Todos' ? 'button-Selected' : 'button-NoSelected'">
+      Todos
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('movie')"
+      [ngClass]="selected == 'movie' ? 'button-Selected' : 'button-NoSelected'">
+      Películas
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cambiarCategoria('tv')"
+      [ngClass]="selected == 'tv' ? 'button-Selected' : 'button-NoSelected'">
+      Series
+    </button>
   </div>
 </section>
 
-<div class="d-flex justify-content-center aling-items-start flex-wrap">
-  <div class="row row-cols-1 row-cols-md-4 g-4 ">
-    <div class="col-md-3" *ngFor="let movie of movies_series">
-      <div class="card" *ngIf="selected == movie.category || selected == 'Todos' ">
-        <div class="qualification">
-          <i class="far fa-star mr-1">
-            <img class="Estar" src="/assets/imagenes/estrella.png" alt="">6.8</i>
-        </div>
-        <img src={{movie.image}} />
-        <div class="contenido">
-          <h5>{{movie.name}}</h5>
-        </div>
+<section>
+  <h3 class="all d-blonk">Todos <small class="body-regular">(120)</small></h3>
+</section>
 
+
+<div class="container">
+  <div class="d-flex justify-content-center aling-items-start flex-wrap">
+    <div class="card col-md-3 col-12" *ngFor="let movie of movies_series.results">
+      <div class="row" *ngIf="selected == movie.media_type || selected == 'Todos'">
+        <div class="star d-flex justify-content-center align-items-center qualification">
+          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
+        </div>
+        <div class="card" *ngIf="selected == movie.media_type || selected == 'movie'">
+          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-card>
+        </div>
+        <div class="card" *ngIf="selected == movie.media_type || selected == 'Tv'">
+          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-card>
+        </div>
       </div>
     </div>
+  </div>
+</div>

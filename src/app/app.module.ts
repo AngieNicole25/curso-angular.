@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { RoutesModule } from './routes/routes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     LayoutModule,
     RoutesModule,
     BrowserAnimationsModule,
-    TypeaheadModule.forRoot(), 
+    HttpClientModule,
+  
   ],
  
   providers: [],

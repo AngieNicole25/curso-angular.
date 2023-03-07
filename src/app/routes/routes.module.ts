@@ -11,12 +11,14 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
     MoviesComponent,
     SeriesComponent,
     IngresarComponent,
+  
   ],
   imports: [
     CommonModule, 
@@ -29,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     MoviesComponent,
     SeriesComponent,
     IngresarComponent,
+
   ],
 })
 export class RoutesModule { }
