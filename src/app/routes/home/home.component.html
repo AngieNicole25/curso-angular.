@@ -36,12 +36,6 @@
         <div class="star d-flex justify-content-center align-items-center qualification">
           <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
         </div>
-        <div class="card" *ngIf="selected == movie.media_type || selected == 'movie'">
-          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-card>
-        </div>
-        <div class="card" *ngIf="selected == movie.media_type || selected == 'Tv'">
-          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-card>
-        </div>
       </div>
     </div>
   </div>

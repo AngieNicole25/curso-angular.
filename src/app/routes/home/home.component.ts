@@ -10,7 +10,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
 })
 
   export class HomeComponent {
-    movies_series : any = {};
+    movies_series : any 
   
     selected: string = 'Todos';
   
@@ -29,11 +29,12 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     this._moviesService.getTrending().subscribe({
       next: (data) => {
         this.movies_series = data;
+        console.log (data)
         for (const element of this.movies_series.results) {
           element.poster_path = 'https://image.tmdb.org/t/p/w500' + element.poster_path;
           element.vote_average = '' + element.vote_average;
         }
-        console.log(this.movies_series)
+       
       },
       error: (error) => {
         console.log(error);
@@ -45,8 +46,9 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     this._moviesService.getMovies().subscribe({
       next: (data) => {
         this.movies_series = data;
+        console.log (data)
         for (const element of this.movies_series.results) {
-          element.poster_path = 'https://api.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
+          element.poster_path = 'https://www.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
         }
       },
       error: (error) => {
@@ -58,9 +60,9 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
   getTv() {
     this._moviesService.getSeries().subscribe({
       next: (data) => {
-        this.movies_series = data;
+        this.movies_series = data
         for (const element of this.movies_series.results) {
-          element.poster_path = 'https://api.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
+          element.poster_path = 'https://www.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
         }
       },
       error: (error) => {
@@ -72,7 +74,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     cambiarCategoria(value: string) {
       this.selected = value;
       if (value == 'tv') {
-        this.getTv();
+        // this.getTv();
       } else if (value == 'movie') {
         this.getMovies();
       } else {

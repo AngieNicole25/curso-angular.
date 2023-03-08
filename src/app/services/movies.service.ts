@@ -26,8 +26,9 @@ export class MoviesService {
     })
   }
 
-  getMovies(): Observable<Trending> {
-    return this._http.get<Trending>(this.base_url + '/movies/popular', {
+  getMovies(): Observable<any> {
+    console.log ('hola');
+    return this._http.get(this.base_url + '/movies/popular', {
       params: {
         api_key: this.api_key,
         language: 'es-Es'
@@ -36,6 +37,7 @@ export class MoviesService {
   }
 
   getSeries(): Observable<Trending> {
+    console.log ('hola');
     return this._http.get<Trending>(this.base_url + '/tv/popular', {
       params: {
         api_key: this.api_key,
