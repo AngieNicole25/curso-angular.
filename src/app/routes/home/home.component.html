@@ -31,8 +31,30 @@
 
 <div class="container">
   <div class="d-flex justify-content-center aling-items-start flex-wrap">
-    <div class="card col-md-3 col-12" *ngFor="let movie of movies_series.results">
-      <div class="row" *ngIf="selected == movie.media_type || selected == 'Todos'">
+    <div class="col-md-3 col-12" *ngFor="let movie of movies_series.results">
+      <div class="row" *ngIf="selected == 'Todos'">
+        <div class="star d-flex justify-content-center align-items-center qualification">
+          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-center aling-items-start flex-wrap">
+    <div class="col-md-3 col-12" *ngFor="let movie of movies_series.results">
+      <div class="row" *ngIf="selected == 'tv'">
+        <div class="star d-flex justify-content-center align-items-center qualification">
+          <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-center aling-items-start flex-wrap">
+    <div class="col-md-3 col-12" *ngFor="let movie of movies_series.results">
+      <div class="row" *ngIf="selected == 'movie'">
         <div class="star d-flex justify-content-center align-items-center qualification">
           <app-card [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
         </div>

@@ -74,7 +74,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     cambiarCategoria(value: string) {
       this.selected = value;
       if (value == 'tv') {
-        // this.getTv();
+        this.getTv();
       } else if (value == 'movie') {
         this.getMovies();
       } else {
