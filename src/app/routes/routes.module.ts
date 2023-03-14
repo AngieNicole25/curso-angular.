@@ -6,7 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { SeriesComponent } from './series/series.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     SharedModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent,
