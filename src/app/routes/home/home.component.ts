@@ -23,7 +23,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
   
     ngOnInit() :void {
       this.getTrendingAll();
-    }
+    } 
     
   getTrendingAll() {
     this._moviesService.getTrending().subscribe({
