@@ -1,1 +1,33 @@
-<p>ingresar works!</p>
+<div class="card login mx-auto">
+    <img  class="img-ini" src="/assets/imagenes/ss.png" alt="">
+    
+    <div class="container">
+        <form (ngSubmit)="ingresar()" [formGroup]="loginForm">
+            <h2>Ingresar</h2>
+            <input
+               class="form-control my-1" 
+               type="email" 
+               placeholder="📨 Correo"
+               formControlName="correo"
+            >
+            <span class="form-text text-danger" *ngIf="campoEsValido('correo')">
+                Campo obligatorio
+            </span>
+            <input 
+               class="form-control my-1" 
+               type="password" 
+               placeholder="🔑 Contraseña"
+               formControlName="contrasena"
+            >
+            <span class="form-text text-danger" *ngIf="campoEsValido('contrasena')">
+                Campo obligatorio
+            </span>
+            <br>
+            <button type="submit" class="btn btn-primary mt-3 mb-1">Ingresar</button> 
+           <hr>
+            <button type="submit" class="btn btn-primary mt-3 mb-1"(click)="register()">¿No tienes cuenta? ¡Registrate!</button>
+            <hr>
+        </form>
+         <button class="btn btn-primary mt-3 mb-1" (click)="ingresarConGoogle()"><img class="img-btn" src="/assets/imagenes/google.png"   alt="">Ingresar con Google</button>         
+    </div>
+</div> 

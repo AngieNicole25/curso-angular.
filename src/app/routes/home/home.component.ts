@@ -23,7 +23,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
   
     ngOnInit() :void {
       this.getTrendingAll();
-    }
+    } 
     
   getTrendingAll() {
     this._moviesService.getTrending().subscribe({
@@ -46,7 +46,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     this._moviesService.getMovies().subscribe({
       next: (data) => {
         this.movies_series = data;
-        console.log (data)
+        console.log ("movies",data)
         for (const element of this.movies_series.results) {
           element.poster_path = 'https://www.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
         }
@@ -60,6 +60,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
   getTv() {
     this._moviesService.getSeries().subscribe({
       next: (data) => {
+        console.log ("serie",data)
         this.movies_series = data
         for (const element of this.movies_series.results) {
           element.poster_path = 'https://www.themoviedb.org/t/p/w220_and_h330_face/' + element.poster_path;
@@ -74,7 +75,7 @@ import { Trending } from 'src/app/shared/interfaces/Trending.interface';
     cambiarCategoria(value: string) {
       this.selected = value;
       if (value == 'tv') {
-        // this.getTv();
+        this.getTv();
       } else if (value == 'movie') {
         this.getMovies();
       } else {

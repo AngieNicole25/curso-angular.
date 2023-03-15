@@ -2,13 +2,14 @@
   background-color: rgba(0, 0, 0, 0.68);
   display: flex;
   flex-direction: column;
-  max-width: 300px;
   padding: 8px;
   border-radius: 12px;
   color: #EBEEF5;
   position: relative;
   transition: all 0.5s case-out;
-  margin: 0px, 30px;
+  margin: 1px, 30px;
+  width: 282px;
+  height: 480px;
 
 }
 .card:hover {
@@ -39,6 +40,4 @@ background-color: rgba(208, 199, 199, 0.65);
   letter-spacing: 0.02em;
   text-align: left;
   text-transform: capitalize;
-  color: black/white;
 }
-
