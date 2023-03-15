@@ -8,7 +8,7 @@
   color: #EBEEF5;
   position: relative;
   transition: all 0.5s case-out;
-  margin: 0px, 30px;
+  margin: 1px, 30px;
 
 }
 .card:hover {
