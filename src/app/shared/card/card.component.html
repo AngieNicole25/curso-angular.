@@ -5,4 +5,7 @@
   </div>
   <img class="portada" src={{imagen}} alt="portada">
   <h5 class="title-card">{{nombre}}</h5>
+  <div class="card-footer" *ngIf="conBoton">
+    <button class="btn btn-primary" (click)="addNewItem()">Agregar a mi lista</button>
+  </div>
 </div>

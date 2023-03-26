@@ -1,0 +1,11 @@
+h1 {
+    color: white;
+}
+button {
+    font-size: 16px;    
+    text-decoration: none;
+    color: aliceblue;    
+    background: #121829;
+    border-radius: 12px;
+    justify-content: center;
+}

@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { SeriesComponent } from './series/series.component';
 import { IngresarComponent } from './ingresar/ingresar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AgregarItemComponent } from './agregar-item/agregar-item.component';
 
 
 
@@ -18,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MoviesComponent,
     SeriesComponent,
     IngresarComponent,
+    DashboardComponent,
+    AgregarItemComponent,
   
   ],
   imports: [
