@@ -1,0 +1,12 @@
+<h1>Añadir nuevos elementos</h1>
+
+<button (click)="obtenerPeliculasGuardadas()">Obtener Peliculas</button>
+
+<div class="container">
+    <div class="d-flex justify-content-center aling-items-start flex-wrap">
+        <div class="card col-md-3 col-12" *ngFor="let movie of movies_series">
+            <div class="star d-flex justify-content-center align-items-center qualification">
+                <app-card (newItemEvent)="addItem($event)" [conBoton]="true" [id]="movie.id" [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name" [vote_average]="movie.vote_average"></app-card>
+            </div>
+        </div>
+    </div>

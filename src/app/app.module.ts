@@ -9,8 +9,9 @@ import { RoutesModule } from './routes/routes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { provideFirebaseApp, getApp, initializeApp } from "@angular/fire/app";
-import { getFirestore, provideFirestore } from "@angular/fire/firestore";
+import { FirestoreModule, getFirestore, provideFirestore } from "@angular/fire/firestore";
 import { FIREBASE_OPTIONS } from "@angular/fire/compat";
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB15e1P9hlVFoLKvEZCC9yz6LZeB2FEwAs",
@@ -33,7 +34,8 @@ const firebaseConfig = {
     RoutesModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // AngularFireAuthModule,
+    AngularFireAuthModule,
+    FirestoreModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],
